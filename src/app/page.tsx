@@ -31,12 +31,16 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <motion.div 
+          className="flex items-center gap-2"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           <PawPrint className="w-8 h-8 text-[#D97742]" />
           <span className="text-xl font-bold text-gray-900">
             PetHealth<span className="text-[#D97742]">AI</span>
           </span>
-        </div>
+        </motion.div>
         <div className="hidden md:flex items-center gap-8 font-medium text-gray-600">
           <a
             href="#formula"
@@ -44,7 +48,7 @@ function Navbar() {
           >
             安心配方
           </a>
-          <a href="#app" className="hover:text-[#D97742] transition-colors">
+          <a href="#ai" className="hover:text-[#D97742] transition-colors">
             App生态
           </a>
           <a href="#team" className="hover:text-[#D97742] transition-colors">
@@ -57,9 +61,13 @@ function Navbar() {
             竞品对比
           </a>
         </div>
-        <button className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors cursor-pointer">
+        <motion.button 
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors cursor-pointer shadow-lg"
+        >
           预定产品
-        </button>
+        </motion.button>
       </div>
     </nav>
   );
@@ -67,7 +75,11 @@ function Navbar() {
 
 function PhoneMockup() {
   return (
-    <div className="w-[300px] h-[600px] bg-gradient-to-b from-[#EBF3FA] to-white rounded-[40px] border-[8px] border-gray-900 shadow-2xl overflow-hidden flex flex-col relative mx-auto">
+    <motion.div 
+      className="w-[300px] h-[600px] bg-gradient-to-b from-[#EBF3FA] to-white rounded-[40px] border-[8px] border-gray-900 shadow-2xl overflow-hidden flex flex-col relative mx-auto"
+      animate={{ y: [0, -15, 0] }}
+      transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+    >
       <div className="h-6 w-full flex justify-between items-center px-5 pt-1 text-[10px] font-medium text-gray-800">
         <span>19:12</span>
         <div className="flex gap-1 items-center">
@@ -91,45 +103,33 @@ function PhoneMockup() {
           专业的宠物健康咨询，随时为你和爱宠服务
         </p>
         <div className="w-full space-y-2.5">
-          <div className="bg-white rounded-xl p-3 flex items-start gap-3 shadow-sm border border-gray-50">
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white rounded-xl p-3 flex items-start gap-3 shadow-sm border border-gray-50">
             <div className="mt-0.5 text-blue-400">
               <Activity className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-gray-800 mb-0.5">
-                健康咨询
-              </h4>
-              <p className="text-[9px] text-gray-500">
-                宠物疾病、症状分析、预防建议
-              </p>
+              <h4 className="text-xs font-bold text-gray-800 mb-0.5">健康咨询</h4>
+              <p className="text-[9px] text-gray-500">宠物疾病、症状分析、预防建议</p>
             </div>
-          </div>
-          <div className="bg-white rounded-xl p-3 flex items-start gap-3 shadow-sm border border-gray-50">
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white rounded-xl p-3 flex items-start gap-3 shadow-sm border border-gray-50">
             <div className="mt-0.5 text-blue-400">
               <Apple className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-gray-800 mb-0.5">
-                营养指导
-              </h4>
-              <p className="text-[9px] text-gray-500">
-                饮食搭配、营养补充、体重管理
-              </p>
+              <h4 className="text-xs font-bold text-gray-800 mb-0.5">营养指导</h4>
+              <p className="text-[9px] text-gray-500">饮食搭配、营养补充、体重管理</p>
             </div>
-          </div>
-          <div className="bg-white rounded-xl p-3 flex items-start gap-3 shadow-sm border border-gray-50">
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white rounded-xl p-3 flex items-start gap-3 shadow-sm border border-gray-50">
             <div className="mt-0.5 text-blue-400">
               <Heart className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-gray-800 mb-0.5">
-                日常护理
-              </h4>
-              <p className="text-[9px] text-gray-500">
-                行为训练、美容护理、生活习惯
-              </p>
+              <h4 className="text-xs font-bold text-gray-800 mb-0.5">日常护理</h4>
+              <p className="text-[9px] text-gray-500">行为训练、美容护理、生活习惯</p>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="mt-6 text-[10px] text-gray-400">
           输入问题，开始咨询
@@ -167,7 +167,7 @@ function PhoneMockup() {
           <span className="text-[8px]">我的</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -223,7 +223,7 @@ const aiFeatures = [
   {
     icon: <MessageCircle className="text-blue-500" />,
     title: "AI 兽医思维链",
-    desc: "Agent多轮思考，分析异常心率、呼吸骟停或微观行为异常，给出专业就医指导。",
+    desc: "Agent多轮思考，分析异常心率、呼吸骤停或微观行为异常，给出专业就医指导。",
   },
 ];
 
@@ -347,22 +347,27 @@ const supportTeam: TeamMember[] = [
 
 function FormulaTag({ num }: { num: number }) {
   return (
-    <span className="inline-flex items-center gap-1.5 bg-[#D97742]/10 text-[#D97742] px-4 py-1.5 rounded-full text-sm font-bold mb-4">
+    <motion.span 
+      whileHover={{ scale: 1.05 }}
+      className="inline-flex items-center gap-1.5 bg-[#D97742]/10 text-[#D97742] px-4 py-1.5 rounded-full text-sm font-bold mb-4 shadow-sm"
+    >
       安心配方 {num}
-    </span>
+    </motion.span>
   );
 }
 
 function TeamMemberCard({ member }: { member: TeamMember }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center"
+      viewport={{ once: true, margin: "-50px" }}
+      whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+      transition={{ duration: 0.4 }}
+      className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm transition-all flex flex-col items-center text-center group"
     >
-      <div className="w-32 h-32 rounded-full mb-4 overflow-hidden bg-gray-100 border-4 border-[#FDFBF7] shadow-inner relative flex items-center justify-center">
-        <User className="w-12 h-12 text-gray-400 opacity-50" />
+      <div className="w-32 h-32 rounded-full mb-4 overflow-hidden bg-gray-100 border-4 border-[#FDFBF7] shadow-inner relative flex items-center justify-center group-hover:border-[#D97742]/20 transition-colors duration-300">
+        <User className="w-12 h-12 text-gray-400 opacity-50 group-hover:scale-110 transition-transform duration-500" />
       </div>
       <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
       <p className="text-[#D97742] font-medium text-sm mb-4">{member.role}</p>
@@ -379,82 +384,144 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
 }
 
 function TeamSection() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
   return (
     <section id="team" className="py-24 bg-[#FDFBF7]">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             跨学科核心研发团队
           </h2>
           <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
             重新定义宠物健康管理，顶尖团队指导和支持构建宠物生态体系
           </p>
-        </div>
+        </motion.div>
+
         <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
           核心研发团队
         </h3>
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8 mb-16"
+        >
           {coreTeam.map((member) => (
             <TeamMemberCard key={member.id} member={member} />
           ))}
-        </div>
+        </motion.div>
+
         <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
           顶尖指导与支持
         </h3>
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {supportTeam.map((member) => (
             <TeamMemberCard key={member.id} member={member} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 export default function Home() {
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
   return (
     <div className="min-h-screen bg-[#FDFBF7] font-sans text-gray-900 selection:bg-[#D97742] selection:text-white overflow-x-hidden">
       <Navbar />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2688&auto=format&fit=crop"
-            alt="Owner and dog"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <motion.div 
+            className="w-full h-full"
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+          >
+            <Image
+              src="/hero-bg.png"
+              alt="PetHealthAI Hero Background"
+              fill
+              className="object-cover opacity-40 mix-blend-multiply"
+              priority
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#FDFBF7] via-[#FDFBF7]/90 to-transparent"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-2xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              variants={staggerContainer}
+              initial="hidden"
+              animate="show"
             >
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 tracking-tight mb-4">
+              <motion.h1 variants={fadeUp} className="text-5xl lg:text-7xl font-bold text-gray-900 tracking-tight mb-4">
                 PetHealth<span className="text-[#D97742]">AI</span>
-              </h1>
-              <h2 className="text-2xl lg:text-3xl font-medium text-gray-800 mb-6">
+              </motion.h1>
+              <motion.h2 variants={fadeUp} className="text-2xl lg:text-3xl font-medium text-gray-800 mb-6">
                 24小时毛孩贴身守护精灵
-              </h2>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+              </motion.h2>
+              <motion.p variants={fadeUp} className="text-lg text-gray-600 mb-4 leading-relaxed">
                 毫米波与多模态大模型赋能宠物健康管理新范式
-              </p>
-              <p className="text-xl font-semibold text-[#D97742] mb-8">
-                我们的使命：让每一位宠物主真正地安心
-              </p>
-              <div className="flex gap-4">
-                <button className="bg-[#D97742] hover:bg-[#B85D2E] text-white px-8 py-4 rounded-full font-medium transition-colors shadow-lg shadow-[#D97742]/30 flex items-center gap-2 cursor-pointer">
+              </motion.p>
+              <motion.div variants={fadeUp} className="inline-block bg-white/60 backdrop-blur-sm border border-[#D97742]/20 rounded-2xl p-4 mb-8 shadow-sm">
+                <p className="text-xl font-bold text-[#D97742] flex items-center gap-2">
+                  <Heart className="w-5 h-5 fill-current" />
+                  我们的使命：让每一位宠物主真正地安心
+                </p>
+              </motion.div>
+              <motion.div variants={fadeUp} className="flex gap-4">
+                <motion.button 
+                  whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgba(217, 119, 66, 0.4)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-[#D97742] text-white px-8 py-4 rounded-full font-medium transition-colors shadow-lg shadow-[#D97742]/30 flex items-center gap-2 cursor-pointer"
+                >
                   探索产品 <ChevronRight className="w-5 h-5" />
-                </button>
-                <button className="bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-full font-medium transition-colors shadow-sm border border-gray-200 cursor-pointer">
+                </motion.button>
+                <motion.button 
+                  whileHover={{ scale: 1.05, backgroundColor: "#f9fafb" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-gray-900 px-8 py-4 rounded-full font-medium transition-colors shadow-sm border border-gray-200 cursor-pointer"
+                >
                   下载 App
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -463,24 +530,32 @@ export default function Home() {
       {/* Pain Points */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               毛孩子生病不会说话
             </h2>
             <p className="text-lg text-gray-500">
-              宠物医疗的致命监控盲区，作为家长最害怕{"“"}突然的意外
-              {"”"}
+              宠物医疗的致命监控盲区，作为家长最害怕“突然的意外”
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          </motion.div>
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid md:grid-cols-3 gap-8"
+          >
             {painPoints.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-[#FDFBF7] p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow"
+                variants={fadeUp}
+                whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+                className="bg-[#FDFBF7] p-8 rounded-3xl border border-gray-100 transition-all duration-300"
               >
                 <div className="w-16 h-16 bg-[#D97742]/10 text-[#D97742] rounded-2xl flex items-center justify-center mb-6">
                   {item.icon}
@@ -493,7 +568,7 @@ export default function Home() {
                 </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -503,25 +578,33 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
                 <FormulaTag num={1} />
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                   硬件革命
                 </h2>
-                <h3 className="text-xl md:text-2xl text-[#D97742] font-bold mb-6">
-                  突破毛发屏障的毫米波雷达终端
+                <h3 className="text-xl md:text-2xl text-[#D97742] font-bold mb-6 flex items-center gap-2">
+                  <Cpu className="w-6 h-6" /> 突破毛发屏障的毫米波雷达终端
                 </h3>
                 <p className="text-lg text-gray-600 mb-10">
                   自主研发专利毫米波雷达终端，构建宠物健康的第一道预警防线；结合多模态融合定位（GPS+LBS+WiFi）与高精度多轴IMU。
                 </p>
                 <div className="space-y-8">
                   {hardwareFeatures.map((item, i) => (
-                    <div key={i} className="flex gap-4">
+                    <motion.div 
+                      key={i} 
+                      className="flex gap-4"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.15 }}
+                      viewport={{ once: true }}
+                    >
                       <div className="mt-1">
-                        <div className="w-6 h-6 rounded-full bg-[#D97742] text-white flex items-center justify-center">
+                        <div className="w-6 h-6 rounded-full bg-[#D97742] text-white flex items-center justify-center shadow-md">
                           <Check className="w-3 h-3" />
                         </div>
                       </div>
@@ -533,31 +616,55 @@ export default function Home() {
                           {item.desc}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
             </div>
             <div className="lg:w-1/2 relative w-full max-w-md mx-auto">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
                 viewport={{ once: true }}
                 className="relative z-10"
               >
-                <div className="aspect-square rounded-full bg-gradient-to-tr from-[#D97742]/20 to-transparent p-8 relative">
-                  <div className="absolute inset-0 border border-[#D97742]/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                <motion.div 
+                  className="aspect-square rounded-full bg-gradient-to-tr from-[#D97742]/20 to-transparent p-8 relative"
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  {/* Glowing pulse rings */}
+                  <motion.div 
+                    className="absolute inset-0 border-2 border-[#D97742]/40 rounded-full"
+                    animate={{ scale: [1, 1.2, 1.4], opacity: [0.8, 0.4, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+                  ></motion.div>
+                  <motion.div 
+                    className="absolute inset-0 border-2 border-[#D97742]/40 rounded-full"
+                    animate={{ scale: [1, 1.2, 1.4], opacity: [0.8, 0.4, 0] }}
+                    transition={{ duration: 2, delay: 1, repeat: Infinity, ease: "easeOut" }}
+                  ></motion.div>
+                  
                   <div className="absolute inset-8 border border-[#D97742]/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-                  <Image
-                    src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1000&auto=format&fit=crop"
-                    alt="Dog wearing collar"
-                    fill
-                    className="object-cover rounded-full shadow-2xl p-8"
-                  />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl flex items-center justify-center z-10">
-                    <Wifi className="w-10 h-10 text-[#D97742]" />
+                  
+                  <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white">
+                    <Image
+                      src="/hardware-dog.png"
+                      alt="Dog wearing collar"
+                      fill
+                      className="object-cover scale-110"
+                    />
                   </div>
-                </div>
+                  
+                  {/* Overlay Radar icon */}
+                  <motion.div 
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl flex items-center justify-center z-10 border border-[#D97742]/10"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
+                    <Wifi className="w-10 h-10 text-[#D97742]" />
+                  </motion.div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -567,41 +674,52 @@ export default function Home() {
       {/* 安心配方2: PetMind AI */}
       <section id="ai" className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <FormulaTag num={2} />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
               软件大脑
             </h2>
-            <h3 className="text-xl md:text-2xl text-blue-500 font-bold mb-4">
-              PetMind大模型全方位守护
+            <h3 className="text-xl md:text-2xl text-blue-500 font-bold mb-4 flex items-center justify-center gap-2">
+              <Brain className="w-6 h-6" /> PetMind大模型全方位守护
             </h3>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              针对通用大模型在垂直领域的认知局限，引入海量真实临床数据进行深度训练，构建真正具备{"“"}兽医临床思维{"”"}的专用
-              AI 内核。
+              针对通用大模型在垂直领域的认知局限，引入海量真实临床数据进行深度训练，构建真正具备“兽医临床思维”的专用 AI 内核。
             </p>
-          </div>
+          </motion.div>
+
           <div className="flex flex-col lg:flex-row items-center gap-16 justify-center">
-            <div id="app" className="lg:w-1/3 flex justify-center">
+            <div id="app" className="lg:w-1/3 flex justify-center perspective-1000">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, rotateX: 20, y: 50 }}
+                whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
+                transition={{ duration: 0.8, type: "spring" }}
                 viewport={{ once: true }}
               >
                 <PhoneMockup />
               </motion.div>
             </div>
+            
             <div className="lg:w-1/2">
-              <div className="grid sm:grid-cols-2 gap-6">
+              <motion.div 
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-50px" }}
+                className="grid sm:grid-cols-2 gap-6"
+              >
                 {aiFeatures.map((item, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="bg-[#FDFBF7] p-6 rounded-2xl border border-gray-100"
+                    variants={fadeUp}
+                    whileHover={{ scale: 1.03, y: -5 }}
+                    className="bg-gradient-to-br from-[#FDFBF7] to-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
                   >
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm mb-4">
+                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm mb-4 border border-gray-50">
                       {item.icon}
                     </div>
                     <h4 className="text-lg font-bold text-gray-900 mb-2">
@@ -610,40 +728,58 @@ export default function Home() {
                     <p className="text-sm text-gray-600">{item.desc}</p>
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 安心配方3: Social */}
-      <section className="py-24 bg-[#FDFBF7]">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+      <section className="py-24 bg-[#FDFBF7] relative overflow-hidden">
+        {/* Decorative background blobs */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-[#D97742]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <FormulaTag num={3} />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
               专属宠物社交圈
             </h2>
-            <h3 className="text-xl md:text-2xl text-[#D97742] font-bold mb-4">
-              在交友与心得分享中消除焦虑，让宠物主安心
+            <h3 className="text-xl md:text-2xl text-[#D97742] font-bold mb-4 flex items-center justify-center gap-2">
+              <Users className="w-6 h-6" /> 在交友与心得分享中消除焦虑，让宠物主安心
             </h3>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto">
               养宠不应是一座孤岛，我们在精准健康检测基础上，构建了充满温度的社交互助生态。
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          </motion.div>
+
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-8"
+          >
             {socialFeatures.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow"
+                variants={fadeUp}
+                whileHover={{ y: -15, scale: 1.02 }}
+                className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="w-16 h-16 bg-[#D97742]/10 rounded-2xl flex items-center justify-center mb-6">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-transparent to-gray-50 rounded-bl-full -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <motion.div 
+                  className="w-16 h-16 bg-[#D97742]/10 rounded-2xl flex items-center justify-center mb-6"
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                >
                   {item.icon}
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {item.title}
                 </h3>
@@ -652,7 +788,7 @@ export default function Home() {
                 </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -660,24 +796,41 @@ export default function Home() {
       <TeamSection />
 
       {/* Comparison */}
-      <section id="compare" className="py-24 bg-[#111827] text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            降维打击：全栈技术护城河与{"“"}价格屠夫{"”"}策略
-          </h2>
-          <p className="text-gray-400 mb-16 max-w-2xl mx-auto">
-            全球极少数同时掌握底层硬件架构、慢病监测核心算法与大语言宠物模型的公司。
-          </p>
-          <div className="max-w-4xl mx-auto bg-white/5 rounded-3xl border border-white/10 overflow-hidden backdrop-blur-md">
+      <section id="compare" className="py-24 bg-[#111827] text-white relative overflow-hidden">
+        {/* Add subtle grid background pattern */}
+        <div className="absolute inset-0" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }}></div>
+        
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              降维打击：全栈技术护城河与“价格屠夫”策略
+            </h2>
+            <p className="text-gray-400 mb-16 max-w-2xl mx-auto">
+              全球极少数同时掌握底层硬件架构、慢病监测核心算法与大语言宠物模型的公司。
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto bg-white/5 rounded-3xl border border-white/10 overflow-hidden backdrop-blur-md shadow-2xl"
+          >
             <div className="grid grid-cols-3 text-sm md:text-base font-bold border-b border-white/10 bg-white/5">
               <div className="p-6 text-left">功能与指标</div>
               <div className="p-6 text-gray-400">传统产品</div>
               <div className="p-6 text-[#D97742]">PetHealthAI</div>
             </div>
             {comparisonRows.map((row, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="grid grid-cols-3 text-sm md:text-base border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors"
+                whileHover={{ backgroundColor: "rgba(255,255,255,0.08)" }}
+                className="grid grid-cols-3 text-sm md:text-base border-b border-white/5 last:border-0 transition-colors"
               >
                 <div className="p-6 text-left text-gray-300 font-medium">
                   {row.label}
@@ -688,22 +841,26 @@ export default function Home() {
                 >
                   {row.new}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-white py-16 border-t border-gray-100">
         <div className="container mx-auto px-6 text-center">
-          <div className="flex justify-center items-center gap-2 mb-6">
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex justify-center items-center gap-2 mb-6 cursor-pointer"
+          >
             <PawPrint className="w-8 h-8 text-[#D97742]" />
             <span className="text-2xl font-bold text-gray-900">
               PetHealth<span className="text-[#D97742]">AI</span>
             </span>
-          </div>
-          <p className="text-2xl font-bold text-gray-900 mb-3">
+          </motion.div>
+          <p className="text-2xl font-bold text-gray-900 mb-3 flex items-center justify-center gap-2">
+            <Heart className="w-6 h-6 text-[#D97742] fill-current" />
             我们的使命：让每一位宠物主真正地安心
           </p>
           <p className="text-lg text-gray-600 mb-2">
