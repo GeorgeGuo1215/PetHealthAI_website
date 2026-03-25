@@ -19,6 +19,11 @@ import {
   Apple,
   Wifi,
   Check,
+  MapPin,
+  Globe,
+  HeartHandshake,
+  Cpu,
+  Brain,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -33,17 +38,23 @@ function Navbar() {
           </span>
         </div>
         <div className="hidden md:flex items-center gap-8 font-medium text-gray-600">
-          <a href="#tech" className="hover:text-[#D97742] transition-colors">
-            核心技术
-          </a>
-          <a href="#ai" className="hover:text-[#D97742] transition-colors">
-            PetMind AI
+          <a
+            href="#formula"
+            className="hover:text-[#D97742] transition-colors"
+          >
+            安心配方
           </a>
           <a href="#app" className="hover:text-[#D97742] transition-colors">
             App生态
           </a>
           <a href="#team" className="hover:text-[#D97742] transition-colors">
             团队介绍
+          </a>
+          <a
+            href="#compare"
+            className="hover:text-[#D97742] transition-colors"
+          >
+            竞品对比
           </a>
         </div>
         <button className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors cursor-pointer">
@@ -66,13 +77,11 @@ function PhoneMockup() {
           </div>
         </div>
       </div>
-
       <div className="px-4 pt-3 pb-2">
         <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm text-blue-500">
           <Menu className="w-4 h-4" />
         </div>
       </div>
-
       <div className="flex-1 px-4 flex flex-col items-center mt-2">
         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3 shadow-inner">
           <PawPrint className="w-8 h-8 text-blue-500" />
@@ -81,7 +90,6 @@ function PhoneMockup() {
         <p className="text-[10px] text-gray-500 mb-6 text-center">
           专业的宠物健康咨询，随时为你和爱宠服务
         </p>
-
         <div className="w-full space-y-2.5">
           <div className="bg-white rounded-xl p-3 flex items-start gap-3 shadow-sm border border-gray-50">
             <div className="mt-0.5 text-blue-400">
@@ -123,12 +131,10 @@ function PhoneMockup() {
             </div>
           </div>
         </div>
-
         <div className="mt-6 text-[10px] text-gray-400">
           输入问题，开始咨询
         </div>
       </div>
-
       <div className="bg-white px-3 py-2.5 flex items-center gap-2 border-t border-gray-50">
         <ImageIcon className="w-5 h-5 text-gray-400" />
         <div className="flex-1 bg-gray-100 rounded-full px-3 py-1.5 text-xs text-gray-400 flex items-center">
@@ -139,7 +145,6 @@ function PhoneMockup() {
           <Send className="w-3 h-3 text-white ml-0.5" />
         </div>
       </div>
-
       <div className="bg-white border-t border-gray-100 flex justify-between px-4 py-2 pb-5">
         <div className="flex flex-col items-center gap-1 text-gray-400">
           <PawPrint className="w-4 h-4" />
@@ -170,7 +175,7 @@ const painPoints = [
   {
     icon: <Stethoscope className="w-8 h-8" />,
     title: "\u767d\u5927\u8902\u6548\u5e94",
-    desc: "\u4e34\u5e8a\u8bca\u7597\u73af\u5883\u53ef\u80fd\u8bf1\u53d1\u5f3a\u70c8\u7684\u5e94\u6fc0\u53cd\u5e94\uff0c\u4ece\u800c\u63a9\u76d6\u5ba0\u7269\u771f\u5b9e\u7684\u751f\u7406\u57fa\u7ebf\uff0c\u9020\u6210\u201c\u5e94\u6fc0\u6027\u5931\u771f\u201d\u3002",
+    desc: "\u4e34\u5e8a\u8bca\u7597\u73af\u5883\u53ef\u80fd\u8bf1\u53d1\u5f3a\u70c8\u7684\u5e94\u6fc0\u53cd\u5e94\uff0c\u4ece\u800c\u63a9\u76d6\u5ba0\u7269\u771f\u5b9e\u7684\u751f\u7406\u57fa\u7ebf\uff0c\u8fdb\u800c\u9020\u6210\u201c\u5e94\u6fc0\u6027\u5931\u771f\u201d\u73b0\u8c61\u3002",
   },
   {
     icon: <Activity className="w-8 h-8" />,
@@ -180,7 +185,7 @@ const painPoints = [
   {
     icon: <ShieldAlert className="w-8 h-8" />,
     title: "\u675f\u7f1a\u4e0e\u4f24\u5bb3",
-    desc: "\u4f20\u7edf\u4e13\u4e1a\u5fc3\u7535(ECG)\u8bbe\u5907\u9700\u5243\u6bdb\u4e14\u6613\u4f24\u76ae\u80a4\uff0c\u8981\u6c42\u5ba0\u7269\u4fdd\u6301\u9759\u6b62\uff0c\u64cd\u4f5c\u4e0d\u4fbf\u4e14\u4f53\u9a8c\u5dee\uff0c\u65e0\u6cd5\u5b9e\u73b0\u5c45\u5bb6\u76d1\u6d4b\u3002",
+    desc: "\u4f20\u7edf\u4e13\u4e1a\u5fc3\u7535\uff08ECG\uff09\u8bbe\u5907\u9700\u5243\u6bdb\u4e14\u6613\u4f24\u76ae\u80a4\uff0c\u8981\u6c42\u5ba0\u7269\u4fdd\u6301\u9759\u6b62\uff0c\u64cd\u4f5c\u4e0d\u4fbf\u4e14\u4f53\u9a8c\u5dee\uff0c\u65e0\u6cd5\u5b9e\u73b0\u5c45\u5bb6\u76d1\u6d4b\u3002",
   },
 ];
 
@@ -213,20 +218,38 @@ const aiFeatures = [
   {
     icon: <Bone className="text-amber-600" />,
     title: "\u996e\u98df\u4e0e\u751f\u6d3b\u5e72\u9884\u5efa\u8bae",
-    desc: "\u7ed3\u5408\u5ba0\u7269\u4e13\u5c5e\u4e0a\u4e0b\u6587(\u54c1\u79cd\u3001\u5e74\u9f84\u3001\u65e2\u5f80\u75c5\u53f2)\u8fdb\u884c\u4ea4\u53c9\u6df1\u5ea6\u5206\u6790\u3002",
+    desc: "\u7ed3\u5408\u5ba0\u7269\u4e13\u5c5e\u4e0a\u4e0b\u6587\uff08\u54c1\u79cd\u3001\u5e74\u9f84\u3001\u65e2\u5f80\u75c5\u53f2\uff09\u8fdb\u884c\u4ea4\u53c9\u6df1\u5ea6\u5206\u6790\u3002",
   },
   {
     icon: <MessageCircle className="text-blue-500" />,
     title: "AI \u517d\u533b\u601d\u7ef4\u94fe",
-    desc: "Agent\u81ea\u52a8\u8c03\u53d6\u8fd1\u671f\u6570\u636e\uff0c\u8054\u5408\u5206\u6790\u75c5\u539f\u53ef\u80fd\uff0c\u7ed9\u51fa\u4e13\u4e1a\u5c31\u533b\u6307\u5bfc\u3002",
+    desc: "Agent\u591a\u8f6e\u601d\u8003\uff0c\u5206\u6790\u5f02\u5e38\u5fc3\u7387\u3001\u547c\u5438\u9a9f\u505c\u6216\u5fae\u89c2\u884c\u4e3a\u5f02\u5e38\uff0c\u7ed9\u51fa\u4e13\u4e1a\u5c31\u533b\u6307\u5bfc\u3002",
+  },
+];
+
+const socialFeatures = [
+  {
+    icon: <Globe className="text-[#D97742]" />,
+    title: "\u53d1\u73b0\u4e0e\u5171\u9e23",
+    desc: "\u5168\u7f51\u7cbe\u9009\u70ed\u95e8\u8bdd\u9898\uff0c\u968f\u65f6\u968f\u5730\u5206\u4eab\u6bdb\u5b69\u5b50\u65e5\u5e38\uff0c\u5728\u522b\u4eba\u7684\u7ecf\u9a8c\u4e2d\u627e\u5230\u81ea\u5bb6\u5ba0\u7269\u5c0f\u6bdb\u75c5\u7684\u5e95\u6c14\u4e0e\u5b89\u5fc3\u3002",
+  },
+  {
+    icon: <MapPin className="text-blue-500" />,
+    title: "\u9644\u8fd1\u5ba0\u53cb",
+    desc: "\u57fa\u4e8e\u9ad8\u7cbe\u5ea6\u5b9a\u4f4d\uff0c\u53d1\u73b0\u8eab\u8fb9\u7684\u6bdb\u5b69\u5b50\uff0c\u968f\u65f6\u968f\u5730\u7ea6\u73a9\uff0c\u62d3\u5c55\u4e3b\u4eba\u7684\u793e\u4ea4\u8fb9\u754c\uff0c\u4ea4\u6d41\u517b\u5ba0\u5fc3\u5f97\u3002",
+  },
+  {
+    icon: <HeartHandshake className="text-red-400" />,
+    title: "\u4e13\u5c5e\u4e92\u52a9\u5708",
+    desc: "\u5f53\u8bbe\u5907\u53d1\u51fa\u5f02\u5e38\u9884\u8b66\u65f6\uff0c\u4e0d\u4ec5\u6709AI\u517d\u533b\u6307\u5bfc\uff0c\u66f4\u80fd\u4e00\u952e\u6c42\u52a9\u793e\u533a\u540c\u54c1\u79cd\u7684\u8d44\u6df1\u5ba0\u4e3b\uff0c\u7528\u7fa4\u4f53\u7ecf\u9a8c\u5f7b\u5e95\u7f13\u89e3\u7a81\u53d1\u72b6\u51b5\u5e26\u6765\u7684\u6050\u614c\u3002",
   },
 ];
 
 const comparisonRows = [
   {
     label: "\u751f\u7406\u6307\u6807\u4f20\u611f\u5668",
-    old: "\u5149\u7535 (\u6613\u53d7\u6bdb\u53d1\u5e72\u6270)",
-    new: "\u6beb\u7c73\u6ce2\u96f7\u8fbe (\u53ef\u7a7f\u900f\u6bdb\u53d1)",
+    old: "\u5149\u7535\uff08\u6613\u53d7\u6bdb\u53d1\u5e72\u6270\uff09",
+    new: "\u6beb\u7c73\u6ce2\u96f7\u8fbe\uff08\u53ef\u7a7f\u900f\u6bdb\u53d1\uff09",
   },
   {
     label: "\u751f\u7406\u6307\u6807\u7cbe\u5ea6",
@@ -259,10 +282,10 @@ const coreTeam: TeamMember[] = [
     name: "Mr. Guo Zhaojin",
     role: "CEO",
     desc: [
-      "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\u8d5b\u9a6c\u4f1a\u52a8\u7269\u533b\u5b66\u53ca\u751f\u547d\u79d1\u5b66\u9662\u548c\u521b\u65b0\u5b66\u9662\u8054\u5408\u57f9\u517b\u535a\u58eb\u751f",
-      "\u5165\u9009\u5251\u6865\u5927\u5b662025/26\u201c\u672a\u6765\u5168\u7403\u9886\u8896\u201d\u9879\u76ee",
-      "\u8363\u83b7\u56fd\u9645\u52a8\u7269\u798f\u5229\u7814\u8ba8\u4f1a\u4f18\u79c0\u8bba\u6587\u5956",
-      "\u4ee5 AI \u4e0e\u516c\u5171\u536b\u751f\u601d\u7ef4\uff0c\u91cd\u65b0\u5b9a\u4e49\u5ba0\u7269\u5065\u5eb7\u9884\u8b66\u6807\u51c6",
+      "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\u517d\u533b\u533b\u5b66\u53ca\u751f\u547d\u79d1\u5b66\u9662&\u521b\u65b0\u5b66\u9662\u535a\u58eb\u751f",
+      "\u5251\u6865\u5927\u5b662025/26\u201c\u672a\u6765\u5168\u7403\u9886\u8896\u201d",
+      "\u56fd\u9645\u52a8\u7269\u798f\u5229\u7814\u8ba8\u4f1a\u4f18\u79c0\u8bba\u6587\u5956\u3001\u56fd\u9645\u9876\u5c16\u52a8\u7269\u79d1\u5b66\u671f\u520a\u5ba1\u7a3f\u4eba",
+      "\u4ee5AI\u4e0e\u516c\u5171\u536b\u751f\u601d\u7ef4\uff0c\u91cd\u65b0\u5b9a\u4e49\u5ba0\u7269\u5065\u5eb7\u9884\u8b66\u6807\u51c6\uff0c\u8d1f\u8d23PetMind\u548c\u4e0a\u5c42\u7b97\u6cd5\u7684\u8bbe\u8ba1\u548c\u8bad\u7ec3",
     ],
   },
   {
@@ -271,9 +294,9 @@ const coreTeam: TeamMember[] = [
     role: "CTO",
     desc: [
       "\u4e2d\u56fd\u9996\u4f4dIEEE MTT-S\u533b\u7597\u5e94\u7528\u7814\u7a76\u751f\u5956\u5b66\u91d1\u83b7\u5f97\u8005",
-      "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\u535a\u58eb\u540e\uff0c\u6df1\u8015\u5c04\u9891/\u6beb\u7c73\u6ce2\u751f\u7269\u96f7\u8fbe\u9886\u57df\u8fd110\u5e74",
-      "\u7d2f\u8ba1\u53d1\u8868 30 \u4f59\u7bc7\u9ad8\u6c34\u5e73\u56fd\u9645\u5b66\u672f\u8bba\u6587",
-      "\u4eb2\u81ea\u4e3b\u6301\u5ba0\u7269\u533b\u7597\u7ea7\u96f7\u8fbe\u6a21\u5757\u7684\u5e95\u5c42\u7b97\u6cd5\u4e0e\u786c\u4ef6\u8bbe\u8ba1",
+      "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66ITF\u535a\u58eb\u540e\u7814\u7a76\u5458\uff0c\u6df1\u8015\u5c04\u9891/\u6beb\u7c73\u6ce2\u751f\u7269\u96f7\u8fbe\u9886\u57df\u8fd110\u5e74",
+      "\u53d1\u8868 40 \u4f59\u7bc7\u751f\u7269\u96f7\u8fbe\u76f8\u5173\u56fd\u9645\u5b66\u672f\u8bba\u6587",
+      "\u4eb2\u81ea\u4e3b\u6301\u5ba0\u7269\u533b\u7597\u7ea7\u96f7\u8fbe\u6a21\u5757\u7684\u5e95\u5c42\u7b97\u6cd5\u4e0e\u786c\u4ef6\u8bbe\u8ba1\uff0c\u786e\u4fdd\u6838\u5fc3\u6307\u6807\u8fbe\u5230\u4e34\u5e8a\u7ea7\u6807\u51c6",
     ],
   },
   {
@@ -283,8 +306,8 @@ const coreTeam: TeamMember[] = [
     desc: [
       "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66-\u5eb7\u5948\u5c14\u5927\u5b66\u8054\u57f9\u517d\u533b\u5b66\u535a\u58eb\u751f",
       "\u5bbe\u5915\u6cd5\u5c3c\u4e9a\u5927\u5b66\u517d\u533b\u5b66\u9662\u8bbf\u95ee\u5b66\u8005",
-      "\u83b7\u6b27\u6d32\u7cbe\u51c6\u755c\u7267\u4e1a\u5927\u4f1a\u6700\u4f73\u535a\u58eb\u8bba\u6587\u5956",
-      "\u62e5\u6709\u6df1\u539a\u7684\u673a\u5668\u4eba\u8fd0\u52a8\u5b66\u4e0e\u4f20\u611f\u5668\u7b97\u6cd5\u80cc\u666f",
+      "\u6b27\u6d32\u7cbe\u51c6\u755c\u7267\u4e1a\u5927\u4f1a\u6700\u4f73\u535a\u58eb\u8bba\u6587\u5956\u3001\u52a8\u7269\u73af\u5883\u4e0e\u798f\u5229\u5316\u517b\u6b96\u4f18\u79c0\u8bba\u6587\u5956",
+      "\u6df1\u539a\u7684\u673a\u5668\u4eba\u8fd0\u52a8\u5b66\u4e0e\u4f20\u611f\u5668\u7b97\u6cd5\u80cc\u666f\uff0c\u8d1f\u8d23\u52a8\u6001\u73af\u5883\u4e0b\u5fae\u5f31\u751f\u7269\u4fe1\u53f7\u7684\u63d0\u53d6\u4e0e\u8bc6\u522b",
     ],
   },
 ];
@@ -296,8 +319,8 @@ const supportTeam: TeamMember[] = [
     role: "\u6307\u5bfc\u6559\u6388",
     desc: [
       "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\u8d5b\u9a6c\u4f1a\u52a8\u7269\u533b\u5b66\u53ca\u751f\u547d\u79d1\u5b66\u9662\u526f\u6559\u6388",
-      "\u4e3b\u5bfcAI\u52a8\u7269\u5065\u5eb7\u7b97\u6cd5\u7684\u75c5\u7406\u6a21\u578b\u6784\u5efa",
-      "\u6df1\u8c19\u52a8\u7269\u884c\u4e3a\u5b66\u4e0e\u798f\u5229\u6807\u51c6",
+      "\u4e3b\u5bfcAI\u52a8\u7269\u5065\u5eb7\u7b97\u6cd5\u7684\u75c5\u7406\u6a21\u578b\u6784\u5efa\uff0c\u6df1\u8c19\u52a8\u7269\u884c\u4e3a\u5b66\u4e0e\u798f\u5229\u6807\u51c6",
+      "\u62e5\u6709\u4e30\u5bcc\u7684\u7cbe\u51c6\u755c\u7267\u4e0e\u751f\u547d\u4f53\u5f81\u76d1\u6d4b\u843d\u5730\u7ecf\u9a8c\uff0c\u63d0\u4f9b\u4e86\u6d77\u91cf\u4e34\u5e8a\u6807\u6ce8\u6570\u636e\u652f\u6301",
     ],
   },
   {
@@ -305,9 +328,9 @@ const supportTeam: TeamMember[] = [
     name: "Prof. Guo Yongxin",
     role: "\u6307\u5bfc\u6559\u6388",
     desc: [
-      "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\u7535\u5b50\u5de5\u7a0b\u7cfb\u8bb2\u5ea7\u6559\u6388\u3001\u5168\u7403STEM\u6559\u6388",
-      "\u56fd\u9645\u7535\u6c14\u4e0e\u7535\u5b50\u5de5\u7a0b\u5e08\u534f\u4f1a\u4f1a\u58eb\u3001\u65b0\u52a0\u5761\u5de5\u7a0b\u9662\u9662\u58eb",
-      "\u4e3a\u81ea\u7814\u6beb\u7c73\u6ce2\u96f7\u8fbe\u6280\u672f\u63d0\u4f9b\u9876\u5c42\u8bbe\u8ba1\u4e0e\u7406\u8bba\u6307\u5bfc",
+      "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\u7535\u5b50\u5de5\u7a0b\u7cfb\u8bb2\u5ea7\u6559\u6388\u3001\u65b0\u52a0\u5761\u56fd\u7acb\u5927\u5b66\u517c\u804c\u6559\u6388",
+      "IEEE\u4f1a\u58eb\u3001\u65b0\u52a0\u5761\u5de5\u7a0b\u9662\u9662\u58eb\uff0c\u957f\u671f\u6df1\u8015\u751f\u7269\u533b\u5b66\u7535\u78c1\u5b66\u3001\u6beb\u7c73\u6ce2\u4e0e\u592a\u8d6b\u5179\u96c6\u6210\u7535\u8def\u7814\u7a76",
+      "\u4e3a\u81ea\u7814\u6beb\u7c73\u6ce2\u96f7\u8fbe\u6280\u672f\u53ca\u975e\u4fb5\u5165\u5f0f\u4f53\u5f81\u76d1\u6d4b\u63d0\u4f9b\u9876\u5c42\u8bbe\u8ba1\u4e0e\u5168\u7403\u9886\u5148\u7684\u7406\u8bba\u6307\u5bfc",
     ],
   },
   {
@@ -315,12 +338,20 @@ const supportTeam: TeamMember[] = [
     name: "Prof. CHAN Derek",
     role: "\u6307\u5bfc\u6559\u6388",
     desc: [
-      "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\u521b\u65b0\u5b66\u9662\u6559\u6388",
+      "\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\u521b\u65b0\u5b66\u9662\u6559\u6388\uff0c\u4e13\u6ce8\u4e8e\u5c06\u524d\u6cbf\u5b9e\u9a8c\u5ba4\u6280\u672f\u8f6c\u5316\u4e3a\u9ad8\u589e\u957f\u7684\u5546\u4e1a\u5b9e\u4f53",
       "\u73b0\u4efb\u534e\u6da6\u521b\u4e1a (CR Enterprise) \u9ad8\u7ea7\u6295\u8d44\u603b\u76d1",
-      "\u62c5\u4efb\u9999\u6e2f\u521b\u79d1\u521b\u6295\u57fa\u91d1 (HK Tech Venture Investment) \u9996\u5e2d\u6295\u8d44\u5b98",
+      "\u62c5\u4efb\u9999\u6e2f\u521b\u79d1\u521b\u6295\u57fa\u91d1 (HK Tech Venture Investment) \u9996\u5e2d\u6295\u8d44\u5b98\uff0c\u5177\u5907\u5353\u8d8a\u7684\u65e9\u671f\u9879\u76ee\u5b75\u5316\u4e0e\u9000\u51fa\u7b56\u7565\u7ecf\u9a8c",
     ],
   },
 ];
+
+function FormulaTag({ num }: { num: number }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 bg-[#D97742]/10 text-[#D97742] px-4 py-1.5 rounded-full text-sm font-bold mb-4">
+      \u5b89\u5fc3\u914d\u65b9 {num}
+    </span>
+  );
+}
 
 function TeamMemberCard({ member }: { member: TeamMember }) {
   return (
@@ -359,7 +390,6 @@ function TeamSection() {
             重新定义宠物健康管理，顶尖团队指导和支持构建宠物生态体系
           </p>
         </div>
-
         <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
           核心研发团队
         </h3>
@@ -368,7 +398,6 @@ function TeamSection() {
             <TeamMemberCard key={member.id} member={member} />
           ))}
         </div>
-
         <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">
           顶尖指导与支持
         </h3>
@@ -412,10 +441,11 @@ export default function Home() {
               <h2 className="text-2xl lg:text-3xl font-medium text-gray-800 mb-6">
                 24小时毛孩贴身守护精灵
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                毫米波与多模态大模型赋能宠物健康管理新范式。
-                <br />
-                让每一位宠物主真正地安心。
+              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                毫米波与多模态大模型赋能宠物健康管理新范式
+              </p>
+              <p className="text-xl font-semibold text-[#D97742] mb-8">
+                我们的使命：让每一位宠物主真正地安心
               </p>
               <div className="flex gap-4">
                 <button className="bg-[#D97742] hover:bg-[#B85D2E] text-white px-8 py-4 rounded-full font-medium transition-colors shadow-lg shadow-[#D97742]/30 flex items-center gap-2 cursor-pointer">
@@ -467,8 +497,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hardware */}
-      <section id="tech" className="py-24 bg-[#FDFBF7] overflow-hidden">
+      {/* \u5b89\u5fc3\u914d\u65b91: Hardware */}
+      <section id="formula" className="py-24 bg-[#FDFBF7] overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
@@ -477,15 +507,16 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  硬件革命：突破毛发屏障的
-                  <br />
-                  <span className="text-[#D97742]">毫米波雷达终端</span>
+                <FormulaTag num={1} />
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                  硬件革命
                 </h2>
+                <h3 className="text-xl md:text-2xl text-[#D97742] font-bold mb-6">
+                  突破毛发屏障的毫米波雷达终端
+                </h3>
                 <p className="text-lg text-gray-600 mb-10">
-                  自主研发专利毫米波雷达终端，构建宠物健康的第一道预警防线；结合多模态融合定位与高精度多轴IMU。
+                  自主研发专利毫米波雷达终端，构建宠物健康的第一道预警防线；结合多模态融合定位（GPS+LBS+WiFi）与高精度多轴IMU。
                 </p>
-
                 <div className="space-y-8">
                   {hardwareFeatures.map((item, i) => (
                     <div key={i} className="flex gap-4">
@@ -533,20 +564,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Software / PetMind AI */}
+      {/* \u5b89\u5fc3\u914d\u65b92: PetMind AI */}
       <section id="ai" className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              软件大脑：专属垂类大模型{" "}
-              <span className="text-blue-500">PetMind</span>
+            <FormulaTag num={2} />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+              软件大脑
             </h2>
+            <h3 className="text-xl md:text-2xl text-blue-500 font-bold mb-4">
+              PetMind大模型全方位守护
+            </h3>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto">
               针对通用大模型在垂直领域的认知局限，引入海量真实临床数据进行深度训练，构建真正具备{"\u201C"}兽医临床思维{"\u201D"}的专用
               AI 内核。
             </p>
           </div>
-
           <div className="flex flex-col lg:flex-row items-center gap-16 justify-center">
             <div id="app" className="lg:w-1/3 flex justify-center">
               <motion.div
@@ -557,7 +590,6 @@ export default function Home() {
                 <PhoneMockup />
               </motion.div>
             </div>
-
             <div className="lg:w-1/2">
               <div className="grid sm:grid-cols-2 gap-6">
                 {aiFeatures.map((item, i) => (
@@ -584,19 +616,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* \u5b89\u5fc3\u914d\u65b93: Social */}
+      <section className="py-24 bg-[#FDFBF7]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <FormulaTag num={3} />
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+              专属宠物社交圈
+            </h2>
+            <h3 className="text-xl md:text-2xl text-[#D97742] font-bold mb-4">
+              在交友与心得分享中消除焦虑，让宠物主安心
+            </h3>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              养宠不应是一座孤岛，我们在精准健康检测基础上，构建了充满温度的社交互助生态。
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {socialFeatures.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow"
+              >
+                <div className="w-16 h-16 bg-[#D97742]/10 rounded-2xl flex items-center justify-center mb-6">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team */}
       <TeamSection />
 
       {/* Comparison */}
-      <section className="py-24 bg-[#111827] text-white">
+      <section id="compare" className="py-24 bg-[#111827] text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            降维打击：全栈技术护城河与{"\u201C"}价格屠夫{"\u201D"}
+            降维打击：全栈技术护城河与{"\u201C"}价格屠夫{"\u201D"}策略
           </h2>
           <p className="text-gray-400 mb-16 max-w-2xl mx-auto">
             全球极少数同时掌握底层硬件架构、慢病监测核心算法与大语言宠物模型的公司。
           </p>
-
           <div className="max-w-4xl mx-auto bg-white/5 rounded-3xl border border-white/10 overflow-hidden backdrop-blur-md">
             <div className="grid grid-cols-3 text-sm md:text-base font-bold border-b border-white/10 bg-white/5">
               <div className="p-6 text-left">功能与指标</div>
@@ -624,7 +695,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-12 border-t border-gray-100">
+      <footer className="bg-white py-16 border-t border-gray-100">
         <div className="container mx-auto px-6 text-center">
           <div className="flex justify-center items-center gap-2 mb-6">
             <PawPrint className="w-8 h-8 text-[#D97742]" />
@@ -632,10 +703,15 @@ export default function Home() {
               PetHealth<span className="text-[#D97742]">AI</span>
             </span>
           </div>
-          <p className="text-xl font-medium text-gray-800 mb-4">
+          <p className="text-2xl font-bold text-gray-900 mb-3">
+            我们的使命：让每一位宠物主真正地安心
+          </p>
+          <p className="text-lg text-gray-600 mb-2">
             用科技消融沟通隔阂，共创心意相通的未来
           </p>
-          <p className="text-gray-500 mb-8">让每一位宠物主真正地安心</p>
+          <p className="text-gray-500 mb-8">
+            赋予每一位宠物主真正的安心
+          </p>
           <div className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} PetHealthAI. All rights reserved.
           </div>
